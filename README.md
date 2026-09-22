@@ -34,6 +34,13 @@ To maintain production-grade reliability and architectural integrity, SimuQuant 
 
 ---
 
+## Product Alpha 2: Portfolio Tools & Cost-Averaging
+While core features reside in Alpha 1, **Alpha 2** represents a specialized product extension dedicated to portfolio tools and simulation-based cost-averaging for buy-and-hold equities. The tool links an interactive Monte Carlo simulator with a live scanner to evaluate entry points, safety scores, and dynamic drawdown levels in real-time.
+
+![Alpha 2 Portfolio Tool Cost Averaging](assets/Portfolio_MonteCarlo_CostAveragingLevels.png)
+
+---
+
 ## Visualization Standards & Engineering Highlights
 * **Bloomberg-Style Aesthetics:** Custom-styled matplotlib and seaborn visual outputs mimicking terminal-grade data density, featuring high-contrast dark backgrounds (`#0e1117` / terminal black), monospaced typography, and precise grid layouts tailored for professional risk presentation (`utils/insights/timing_mc_plots.py`).
 * **Rigorous Testing Standards:** Full `pytest` integration covering over 1,000 unit and integration tests for end-to-end signal pipelines, data integrity checks, and regression tests (`test/`).
@@ -134,6 +141,7 @@ Risk_Comment                   ≈ 2.0% Risk at 100,000.0 € Capital
 ```text
 SimuQuant-Showroom/
 ├── asim/                    # Core multi-layered simulation & insight engines
+│   ├── layer1_base_simulation/     # Baseline models, vector backtests & core logic
 │   ├── layer2_advanced_simulation/ # Brute-force parameter sweeps & MC variants
 │   ├── layer3_insight_engine/      # Regime clustering & statistical analyzers
 │   ├── money_manager/              # Position sizing (Dynamic/Static risk models)
