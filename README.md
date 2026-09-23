@@ -18,6 +18,7 @@ To maintain production-grade reliability and architectural integrity, SimuQuant 
 * **Feature/Dev Branches:** All iterative updates, refactoring, and algorithmic adjustments are developed locally on isolated feature or development branches (`dev/*`).
 * **Pull Request (PR) Gatekeeping:** Changes cannot be pushed directly to the `main` branch. Every modification requires a formal Pull Request targeting `main`.
 * **Self-Approval & Quality Gates:** PRs undergo internal review and validation against unit test suites (`pytest`) before receiving approval and being merged into the production branch.
+* **Automated CI Pipelines:** Integrated GitHub Actions workflows automatically run the entire `pytest` suite and code quality checks on every push and Pull Request to `main`, ensuring strict build stability and regression prevention.
 
 ### Dispatcher & CLI Control
 ![Dispatcher Menu Part 1](assets/SimuQuant_HelpMenu_1.png)
@@ -43,7 +44,7 @@ While core features reside in Alpha 1, **Alpha 2** represents a specialized prod
 
 ## Visualization Standards & Engineering Highlights
 * **Bloomberg-Style Aesthetics:** Custom-styled matplotlib and seaborn visual outputs mimicking terminal-grade data density, featuring high-contrast dark backgrounds (`#0e1117` / terminal black), monospaced typography, and precise grid layouts tailored for professional risk presentation (`utils/insights/timing_mc_plots.py`).
-* **Rigorous Testing Standards:** Full `pytest` integration covering over 1,000 unit and integration tests for end-to-end signal pipelines, data integrity checks, and regression tests (`test/`).
+* **Rigorous Testing & CI Standards:** Full `pytest` integration covering over 1,000 unit and integration tests executed automatically via GitHub Actions CI for end-to-end signal pipelines, data integrity checks, and regression tests (`test/`).
 
 ![Test Suite Overview](assets/SimuQuant_Tests.png)
 
